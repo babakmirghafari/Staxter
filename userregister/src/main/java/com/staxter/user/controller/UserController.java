@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
- * Controller Class Responsible for get JSONObject send to service layer and after that return expected response to client
+ * Controller Class Responsible for get JSONObject , send to service layer and after that return expected response to client.
  */
 @RestController
 @RequestMapping(value = "/userservice")
@@ -19,7 +19,7 @@ public class UserController {
     UserService userService;
 
     /**
-     * responsible for register user, send user object to service layer {@link UserService}
+     * responsible for register user, send user object to service layer and {@link UserService}
      * @param user
      * @return expected user object
      */

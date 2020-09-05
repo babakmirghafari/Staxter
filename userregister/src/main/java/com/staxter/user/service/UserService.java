@@ -35,9 +35,11 @@ public class UserService {
 
         /**
          * This line of code check  user object that sent from client is a valid object or not. The validity conditions are :
-         * 1- all of {@link User } property except hashedPassword should have value. (x.equals("") check this condition)
-         * 2- all of {@link User } property except hashedPassword should be existed in sentObject. (x==null check this condition).
-         * when each of above condition return true value this method return {@link CheckUserPropertyNullValueException}
+         * 1- all of {@link User } properties except hashedPassword should have value, when send from client. (x.equals("") check this condition).
+         * 2- all of {@link User } properties except hashedPassword should be existed in sentObject, when send from client. (x==null check this condition).
+         * when each of above conditions return true, this method return {@link CheckUserPropertyNullValueException}
+         *
+         * NOTE : This conditions weren't in task Document , but I decided to check them.
          */
         Stream.of(user.getFirstName(),user.getLastName(),user.getPlainTextPassword(),user.getUserName()).forEach(x->{
            if(x==null || x.equals("")){
@@ -55,7 +57,7 @@ public class UserService {
             throw new UserAlreadyExistException();
 
         /**
-         * generate Hashed text with  BCryptPasswordEncoder ,using  user.getPlainTextPassword() String
+         * generate HashedCode  with  BCryptPasswordEncoder ,using  user.getPlainTextPassword() String
          */
         PasswordEncoder encoder=new BCryptPasswordEncoder();
         user.setHashedPassword(encoder.encode(user.getPlainTextPassword()));
