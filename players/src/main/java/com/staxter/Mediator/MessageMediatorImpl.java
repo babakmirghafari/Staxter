@@ -22,6 +22,7 @@ public class MessageMediatorImpl implements MessageMediator {
         System.out.println("**********************");
     }
 
+    @Override
     public void senResponse(String message, Player receivePlayer,Player sendPlayer) {
         System.out.println(receivePlayer.name+" send Response to "+sendPlayer.name+" for Message:\t\033[32m"+ message+"\033[0m");
     }
