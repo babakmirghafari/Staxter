@@ -12,7 +12,7 @@ public interface MessageMediator {
      * This method responsible for send message between objects.
      * @param message== this message send from sender
      * @param receivePlayer== The player , who receive message
-     * @param sendPlayer==The player, who  sent message
+     * @param sendPlayer==initiator
      * @param counter== number of send and receive message between send and receiver player.
      */
     public void sendMessage(String message, Player receivePlayer,Player sendPlayer, Integer counter);
@@ -21,7 +21,7 @@ public interface MessageMediator {
      * when receiver player , receive message from sender player, should respond to it. with this method we can send response message
      * @param message== message that should be send(original message concatenated counter)
      * @param receivePlayer== The receiver player, who responsible to send respond after receive message.
-     * @param sendPlayer== message sender player.
+     * @param sendPlayer== initiator.
      */
     public void senResponse(String message, Player receivePlayer,Player sendPlayer);
 
