@@ -1,0 +1,5 @@
+com\staxter\Player\PlayerImpl.class
+com\staxter\Mediator\MessageMediator.class
+com\staxter\Main.class
+com\staxter\Player\Player.class
+com\staxter\Mediator\MessageMediatorImpl.class
